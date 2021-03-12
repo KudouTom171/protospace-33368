@@ -31,9 +31,8 @@ def edit
 end
 
 def update
-  prototype = Prototype.find(params[:id])
-  prototype.update(prototypes_params)
-  if prototype.save
+  @prototype = Prototype.find(params[:id])
+  if @prototype.update(prototypes_params)
     redirect_to root_path
   else
     render :edit
