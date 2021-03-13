@@ -33,7 +33,7 @@ end
 def update
   @prototype = Prototype.find(params[:id])
   if @prototype.update(prototypes_params)
-    redirect_to root_path
+    redirect_to action: :show
   else
     render :edit
   end
